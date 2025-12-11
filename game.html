@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climbing Riddle Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .game-container {
+            background-color: #34495e;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #e67e22;
+            margin-bottom: 2rem;
+        }
+
+        .riddle-box {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .answer-box {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+            /* Hidden by default */
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #d35400;
+        }
+
+        button#revealBtn {
+            background-color: #95a5a6;
+        }
+
+        button#revealBtn:hover {
+            background-color: #7f8c8d;
+        }
+
+        .nav-link {
+            display: block;
+            margin-top: 20px;
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game-container">
+        <h1>Climbing Riddle Generator</h1>
+
+        <div class="riddle-box" id="riddleDisplay">
+            Click "New Riddle" to start!
+        </div>
+
+        <button id="newRiddleBtn">New Riddle</button>
+        <button id="revealBtn" disabled>Reveal Answer</button>
+
+        <div class="answer-box" id="answerDisplay"></div>
+
+        <a href="scratch.html" class="nav-link">Back to Scratch Page</a>
+    </div>
+
+    <script>
+        const riddles = [
+            { q: "I have a face but no eyes, hands but no arms. What am I?", a: "A Clock (Wait, that's not climbing. Let's try again: A Cliff Face!)" },
+            { q: "I can be lead, but I have no authority. I can be top-roped, but I'm not a cow. What am I?", a: "A Route" },
+            { q: "You use me to clip, but I'm not a coupon. I have a gate, but no fence. What am I?", a: "A Carabiner" },
+            { q: "I save your life but I'm just a knot. I'm essentially a figure 8, but I don't skate. What am I?", a: "The Figure-Eight Knot" },
+            { q: "I get high without drugs. I fall without failing. What am I?", a: "A Rock Climber" },
+            { q: "I have a tongue but cannot speak. I have a sole but no spirit. What am I?", a: "A Climbing Shoe" },
+            { q: "I am full of holes, yet I can hold your weight. What am I?", a: "A Bolt Hanger (or maybe some questionable limestone!)" }
+        ];
+
+        const riddleDisplay = document.getElementById('riddleDisplay');
+        const answerDisplay = document.getElementById('answerDisplay');
+        const newRiddleBtn = document.getElementById('newRiddleBtn');
+        const revealBtn = document.getElementById('revealBtn');
+
+        let currentRiddle = null;
+
+        newRiddleBtn.addEventListener('click', () => {
+            // Get random riddle
+            const randomIndex = Math.floor(Math.random() * riddles.length);
+            currentRiddle = riddles[randomIndex];
+
+            // Update UI
+            riddleDisplay.innerText = currentRiddle.q;
+            answerDisplay.style.display = 'none';
+            revealBtn.disabled = false;
+            revealBtn.style.backgroundColor = "#95a5a6"; // Reset color
+        });
+
+        revealBtn.addEventListener('click', () => {
+            if (!currentRiddle) return;
+
+            // Show answer
+            answerDisplay.innerText = currentRiddle.a;
+            answerDisplay.style.display = 'block';
+            revealBtn.disabled = true;
+        });
+
+        // Initialize with better placeholder
+        riddleDisplay.innerText = "Ready to test your wit?";
+    </script>
+</body>
+
+</html>

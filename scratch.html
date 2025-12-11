@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vertical World - Climbing Passion</title>
+    <!-- Requirement: Link to custom stylesheet -->
+    <link rel="stylesheet" href="scratch_style.css">
+</head>
+
+<body>
+
+    <!-- Requirement: On-page anchor target -->
+    <a id="top"></a>
+
+    <div class="header-container">
+        <h1>The Vertical World</h1>
+        <p>A glimpse into the sport of Rock Climbing</p>
+        <p><a href="index.html" style="color: #ecf0f1; font-size: 0.9em;">&larr; Back to Professional Portfolio</a></p>
+    </div>
+
+    <div class="content-wrapper">
+
+        <h2>Why I Climb</h2>
+        <p>
+            Rock climbing is more than just a sport; it's a puzzle that you solve with your body.
+            Whether it's the mental challenge of figuring out a sequence or the physical demand of holding on
+            when you're pumped, there is nothing quite like it.
+        </p>
+
+        <!-- Requirement: Image not from Bootstrap -->
+        <div class="image-container">
+            <img src="IMG_1746.jpg" alt="A scenic climbing wall view">
+            <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">One of my favorite local spots.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Climbing Styles</h3>
+            <p>There are many ways to climb, each with its own unique challenges.</p>
+
+            <!-- Requirement: Unordered list embedded in an ordered list -->
+            <ol>
+                <li><strong>Free Climbing</strong> (Using hands and feet to ascend)
+                    <ul>
+                        <li>Bouldering: Climbing short walls without ropes, using pads for protection.</li>
+                        <li>Sport Climbing: Clipping into pre-placed bolts for safety.</li>
+                        <li>Trad Climbing: Placing your own gear into cracks as you go up.</li>
+                    </ul>
+                </li>
+                <li><strong>Aid Climbing</strong> (Pulling on gear to ascend)</li>
+                <li><strong>Free Soloing</strong> (Climbing without ropes or protection - highly dangerous!)</li>
+            </ol>
+        </div>
+
+        <!-- Requirement: Embedded YouTube video -->
+        <h2>Inspiration</h2>
+        <p>This video captures the essence of what motivates me.</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zhDXksXQ0ak" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <h2>Climbing Data</h2>
+        <p>Here is some interesting data visualizing climbing trends.</p>
+
+        <!-- Requirement: Live and interactive embedded Tableau graph -->
+        <div style="width: 100%; max-width: 100%; overflow-x: auto; overflow-y: auto; max-height: 600px; border: 1px solid #ccc; border-radius: 8px;">
+            <div class='tableauPlaceholder' id='viz1765432331376' style='position: relative; min-width: 800px;'>
+                <noscript><a href='#'><img alt='Final Dashboard' src='https://public.tableau.com/static/images/Th/TheClimbingProject/FinalDashboard/1_rss.png' style='border: none' /></a></noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='TheClimbingProject/FinalDashboard' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/Th/TheClimbingProject/FinalDashboard/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object>
+            </div>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1765432331376');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '800px';
+            vizElement.style.height = '600px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+        <div class="nav-link-box">
+            <!-- Requirement: Link to Web App -->
+            <h3>Want a laugh?</h3>
+            <p>Check out this little app I built with AI assistance.</p>
+            <a href="game.html" style="font-size: 1.2em; color: #d35400;">Play the Climbing Riddle Game &rarr;</a>
+
+            <br><br>
+            <!-- Requirement: On-page anchor link -->
+            <a href="#top" style="font-size: 0.9em; color: #95a5a6;">Return to Top</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
